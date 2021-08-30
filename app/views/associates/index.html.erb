@@ -16,7 +16,9 @@
           <tr>
             <th>Surname</th>
             <th>First</th>
-            <th>Email Address</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Created?</th>
             <th>Management?</th>
             <th colspan="3"></th>
           </tr>
@@ -28,6 +30,8 @@
                 <td><%= link_to associate.surname, associate %></td>
                 <td><%= associate.first %></td>
                 <td><%= associate.email %></td>
+                <td><%= associate.phonemobile %></td>
+                <td><%= associate.created_at.strftime("%d/%m/%Y") %></td>
                 <td><%= associate.management %></td>
                 <% if current_user.try(:vip?) or current_user.try(:admin?) %>
                     <td><%= link_to 'Edit', edit_associate_path(associate), :class => "btn btn-xs btn-success" %></td>

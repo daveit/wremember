@@ -17,15 +17,14 @@
           <%= f.input :operator, label: 'Administrative Body', input_html: {:style => 'width: 300px'} %>
           <%= f.input :manager, input_html: {:style => 'width: 300px'} %>
           <%= f.input :memorial_number, input_html: {:style => 'width: 300px'} %>
-          <%
-=begin%>
- <%= f.input :residents, as: :integer, label: 'No of Units?', input_html: {:style => 'width: 200px'} %> 
-<%
-=end%>
-          <%= f.input :residents %>
+          <%= f.input :numres, as: :integer, label: 'No of Units?', input_html: {:style => 'width: 200px'} %> 
           <%= f.association :status, as: :radio_buttons %>
           <%= f.association :region, as: :radio_buttons %>
-          <%= f.association :village_categories, as: :check_boxes %>
+          <%
+=begin%>
+ <%= f.association :village_categories, as: :check_boxes %> 
+<%
+=end%>
           <%= submit_tag "Save Village", :class => "btn btn-small btn-success" %>
         </div>
     <% end %>

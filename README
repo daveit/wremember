@@ -9,10 +9,3 @@ amount:decimal reference:string financialto:date associate:references
 rails generate controller AssociatePayments
 
 rails generate migration AddDetailsToAssociatePayments details:string
-
-
-individuals
-ireceipts
-
-associates
-associatepayments

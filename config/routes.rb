@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-  resources :reminders
   #get 'residents/index'
 
   resources :miscellaneous_contacts
@@ -17,6 +16,7 @@ Rails.application.routes.draw do
   resources :ivillages
   resources :ireceipts
   resources :contacts
+  resources :vreceipts
   resources :associate_payments
   
   resources :residents do
@@ -53,6 +53,7 @@ Rails.application.routes.draw do
     end
     resources :contacts
     resources :vreceipts
+    resources :reminders
   end
 
   resources :village_categories

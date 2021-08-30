@@ -22,7 +22,7 @@
 
     <p>
       <strong>No of Units</strong>
-      <%= @village.residents %>
+      <%= @village.numres %>
     </p>
 
     <p>
@@ -48,8 +48,8 @@
         <table class="table table-hover table-bordered">
           <thead>
           <tr>
-            <th>Title</th>
             <th>Name</th>
+            <th>Title</th>
             <th>Phone</th>
             <th>Mobile</th>
             <th>Email</th>
@@ -62,10 +62,10 @@
           <% @village.contacts.each do |contact| %>
               <tr>
                 <td>
-                  <%= contact.title.name %>
+                  <%= link_to contact.name, edit_contact_path(contact) %>
                 </td>
                 <td>
-                  <%= contact.name %>
+                  <%= contact.title.name %>
                 </td>
                 <td>
                   <%= contact.phone %>
@@ -80,7 +80,7 @@
                   <%= contact.position.name %>
                 </td>
                 <td>
-                  </td><%= check_box "", "", {:checked => contact.admin, :disabled => true} %>
+                  <%= check_box "", "", {:checked => contact.admin, :disabled => true} %></td>
               </tr>
           <% end %>
           </tbody>
@@ -107,7 +107,7 @@
           <% @village.vreceipts.each do |rec| %>
               <tr>
                 <td>
-                  <%= rec.rdate %>
+                  <%= link_to rec.rdate, edit_vreceipt_path(rec)  %>
                 </td>
                 <td>
                   <%= number_to_currency(rec.recamount) %>
@@ -135,7 +135,10 @@
         <table class="table table-hover table-bordered">
           <thead>
           <tr>
-            <th>Surname:</th>
+            <th>Surname</th>
+            <th>First</th>
+            <th>Phone</th>
+            <th>Email</th>
           </tr>
           </thead>
 
@@ -143,7 +146,16 @@
           <% @village.residents.each do |residents| %>
               <tr>
                 <td>
-                  <%= residents.surname %>
+                  <%= link_to residents.surname, residents %>
+                </td>
+                <td>
+                  <%= residents.first %>
+                </td>
+                <td>
+                  <%= residents.phone %>
+                </td>
+                <td>
+                  <%= residents.email %>
                 </td>
               </tr>
           <% end %>
@@ -157,8 +169,6 @@
         <%= link_to 'Back', villages_path, :class => "btn btn-small btn-primary" %>
     <% end %>
   </div>
-
-  
 
   <div class="col-xs-6 col-md-3">
     <% if current_user.try(:vip?) or current_user.try(:admin?) %>

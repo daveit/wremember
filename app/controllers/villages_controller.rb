@@ -103,6 +103,6 @@ class VillagesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def village_params
       params.require(:village).permit(:name, :address, :address2, :phone, :email, :financial_to,
-        :residents, :status_id, :owner, :operator, :memorial_number, :manager, :suburb, :postcode, :region_id, {:village_category_ids => []})
+        :numres, :status_id, :owner, :operator, :memorial_number, :manager, :suburb, :postcode, :region_id, {:village_category_ids => []})
     end
 end

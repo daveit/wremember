@@ -6,7 +6,7 @@
     </h3>
 
     <p>
-      <%= @village.address %>
+    <%= @village.address %>
       <br>
       <%= @village.address2 %>
       <br>
@@ -62,7 +62,7 @@
           <% @village.contacts.each do |contact| %>
               <tr>
                 <td>
-                  <%= link_to contact.name, edit_contact_path(contact) %>
+                  <%= link_to contact.name, contact %>
                 </td>
                 <td>
                   <%= contact.title.name %>
@@ -107,7 +107,7 @@
           <% @village.vreceipts.each do |rec| %>
               <tr>
                 <td>
-                  <%= link_to rec.rdate, edit_vreceipt_path(rec)  %>
+                  <%= link_to rec.rdate, rec  %>
                 </td>
                 <td>
                   <%= number_to_currency(rec.recamount) %>
@@ -129,7 +129,7 @@
     </div>
     <hr class="style-one">
 
-    <h3>Village Residents</h3>
+    <h3>Village Members</h3>
      <div class="media">
       <div class="media-body">
         <table class="table table-hover table-bordered">

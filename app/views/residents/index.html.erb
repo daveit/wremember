@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Residents</h1>
+<h1>Listing Members</h1>
 
 <div class="media">
       <div class="media-body">
@@ -35,13 +35,13 @@
 
 <br>
 
-<%= link_to 'New Resident', new_resident_path, :class => "btn btn-small btn-danger" %>
+<%= link_to 'New Member', new_resident_path, :class => "btn btn-small btn-danger" %>
 
-<h3>Import Residents</h3>
+<h3>Import Members</h3>
 <%= form_tag import_residents_path, multipart: true do %>
   <%= file_field_tag :file %>
     <br>
-  <%= submit_tag "Upload Residents CSV File", :class => "btn btn-small btn-danger" %>
+  <%= submit_tag "Upload Members CSV File", :class => "btn btn-small btn-danger" %>
 <% end %>
 
 

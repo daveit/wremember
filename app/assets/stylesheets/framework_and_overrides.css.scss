@@ -1,6 +1,11 @@
 // import the CSS framework
 // @import "bootstrap-sprockets";
 // @import "bootstrap";
+.btn-default {
+  color: #212529;
+  background-color: #7cc;
+  border-color: #5bc2c2
+}
 
 .checkbox_container {
   display: inline-block;
